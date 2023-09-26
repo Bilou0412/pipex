@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_text.c                                      :+:      :+:    :+:   */
+/*   ft_print_third_tab.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 13:58:36 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/09/25 20:28:29 by bmoudach         ###   ########.fr       */
+/*   Created: 2023/09/26 03:47:05 by bmoudach          #+#    #+#             */
+/*   Updated: 2023/09/26 06:18:55 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_put_text(const char *str, int *len)
+int	ft_print_third_tab(char ***tab)
 {
-	char	*strverif;
+	int	i;
+	int	j;
 
-	strverif = ft_strchr(str, '%');
-	if (!strverif)
+	i = 0;
+	j = 0;
+	while (tab[i])
 	{
-		*len += write(1, str, ft_strlen(str));
-		return ((char *)str + ft_strlen(str));
+		ft_printf("tab[%d]:\n", i);
+		while (tab[i][j])
+		{
+			ft_printf("tab[%d][%d]: %s\n", i, j, tab[i][j]);
+			j++;
+		}
+		j = 0;
+		i++;
 	}
-	else
-	{
-		*len += write(1, str, (int)(ft_strchr(str, '%') - str));
-		return (ft_strchr(str, '%'));
-	}
+	return (0);
 }

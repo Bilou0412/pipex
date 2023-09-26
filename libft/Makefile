@@ -18,7 +18,9 @@ SRCS		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 			ft_toupper.c ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c  \
 			ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
 			ft_printf.c ft_putchar.c ft_puthexa.c ft_putnbr.c ft_putptr.c ft_putstr.c \
-			ft_put_text.c ft_put_unsigned.c get_next_line.c \
+			ft_put_text.c ft_put_unsigned.c get_next_line.c ft_last_index.c ft_free_tab.c \
+			ft_free_third_tab.c ft_print_third_tab.c ft_print_tab.c\
+
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -41,7 +43,7 @@ CC		= 	gcc
 
 RM		= 	rm -f
 
-CFLAGS		= 	-Wall -Wextra -Werror -I.
+CFLAGS		= -g3 -Wall -Wextra -Werror -I.
 
 NAME		=	libft.a
 

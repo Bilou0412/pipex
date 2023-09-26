@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_text.c                                      :+:      :+:    :+:   */
+/*   check_files.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 13:58:36 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/09/25 20:28:29 by bmoudach         ###   ########.fr       */
+/*   Created: 2023/09/25 21:05:58 by bmoudach          #+#    #+#             */
+/*   Updated: 2023/09/26 03:51:40 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-char	*ft_put_text(const char *str, int *len)
+int	check_files(t_data *data, int argc, char **argv, char **envp)
 {
-	char	*strverif;
-
-	strverif = ft_strchr(str, '%');
-	if (!strverif)
-	{
-		*len += write(1, str, ft_strlen(str));
-		return ((char *)str + ft_strlen(str));
-	}
-	else
-	{
-		*len += write(1, str, (int)(ft_strchr(str, '%') - str));
-		return (ft_strchr(str, '%'));
-	}
+	data->argv = argv;
+	data->nb_cmd = argc - 3;
+	data->envp = envp;
+	data->args_error = 0;
+	data->file_error = 0;
+	if (access(data->argv[1], F_OK | R_OK))
+		data->file_error = 1;
+	return (0);
 }
