@@ -49,7 +49,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*get_next_line(int fd, int *error);
 void	*ft_memmove(void *dst, const void *src, size_t num);
 void	*ft_memcpy(void *dst, const void *src, size_t num);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -75,5 +74,7 @@ int		ft_free_tab(char **tab);
 int		ft_free_third_tab(char ***tab);
 int		ft_print_tab(char **tab);
 int		ft_print_third_tab(char ***tab);
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 
 #endif

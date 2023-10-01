@@ -6,7 +6,7 @@
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:00:34 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/09/26 06:18:21 by bmoudach         ###   ########.fr       */
+/*   Updated: 2023/10/01 04:16:29 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ int			args_is_path(t_data *data, int i);
 int			copy_path(int i, char *tmp, t_data *data);
 int			error_handler(t_data *data);
 int			exec(t_data *data);
+void		free_all(t_data *data);
 #endif

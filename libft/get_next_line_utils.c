@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 20:59:59 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/10/01 04:29:13 by bmoudach         ###   ########.fr       */
+/*   Created: 2023/05/26 13:46:52 by bmoudach          #+#    #+#             */
+/*   Updated: 2023/09/27 12:47:42 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/pipex.h"
+#include "libft.h"
 
-int	main(int argc, char **argv, char **envp)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-	t_data	data;
+	char	*str;
+	int		size;
 
-	if (argc < 5 || argc > 1024)
-		return (ft_printf("parse error near `|'"), 0);
-	if (check_files(&data, argc, argv, envp))
-		return (0);
-	if (check_cmds(&data))
-		return (0);
-	if (exec(&data))
-		return (free_all(&data), 0);
-	error_handler(&data);
-	return (free_all(&data), 0);
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	else if (s1 && !s2)
+		return (ft_strdup(s1));
+	else
+	{
+		size = ft_strlen(s1) + ft_strlen(s2);
+		str = malloc((size + 1) * sizeof(char));
+		if (!str)
+			return (NULL);
+		ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+		ft_strlcat(str, s2, size + 1);
+		free(s1);
+	}
+	return (str);
 }
