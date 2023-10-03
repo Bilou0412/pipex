@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec.c                                             :+:      :+:    :+:   */
+/*   exec_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 06:18:01 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/10/01 04:21:14 by bmoudach         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:45:47 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	distrib_cmd(t_data *data)
 		return (-1);
 	if (execve(data->cmds_path[data->cmd_round],
 			data->cmds_args[data->cmd_round], data->envp) == -1)
-		return (error_handler(data), -1);
+		return (-1);
 	return (0);
 }
 
@@ -71,12 +71,12 @@ int	exec(t_data *data)
 		}
 		else
 		{
+			waitpid(data->pid, &data->status, 0);
 			close(data->pipe_fd[1]);
 			data->tmp_fd = data->pipe_fd[0];
 			data->cmd_round++;
 		}
 	}
-	waitpid(data->pid, &data->status, 0);
 	close(data->tmp_fd);
 	return (0);
 }

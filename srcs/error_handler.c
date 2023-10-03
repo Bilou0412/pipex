@@ -6,7 +6,7 @@
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 03:29:40 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/10/01 04:21:52 by bmoudach         ###   ########.fr       */
+/*   Updated: 2023/10/03 14:17:29 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ int	error_handler(t_data *data)
 		infile_not_found(data);
 	if (data->args_error == 1)
 		cmd_not_found(data);
-	return (-1);
+	return (0);
 }

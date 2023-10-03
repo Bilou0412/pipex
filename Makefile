@@ -6,7 +6,7 @@
 #    By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 04:23:10 by bmoudach          #+#    #+#              #
-#    Updated: 2023/10/01 04:42:38 by bmoudach         ###   ########.fr        #
+#    Updated: 2023/10/03 15:46:46 by bmoudach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ bonus:					$(NAME_BONUS)
 
 clean:
 						$(MAKE) fclean -C $(LIBFT_DIR)
+							rm -rf $(OBJ_DIR) $(OBJ_BONUS_DIR)
 
 fclean:					clean
 							rm -f $(NAME) $(NAME_BONUS)

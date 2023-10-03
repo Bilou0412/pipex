@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 20:59:59 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/10/01 04:16:55 by bmoudach         ###   ########.fr       */
+/*   Created: 2023/10/03 15:45:40 by bmoudach          #+#    #+#             */
+/*   Updated: 2023/10/03 15:47:36 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	main(int argc, char **argv, char **envp)
 	if (exec(&data))
 		return (free_all(&data), 0);
 	error_handler(&data);
-	return (free_close(&data), 0);
+	return (free_all(&data), 0);
 }

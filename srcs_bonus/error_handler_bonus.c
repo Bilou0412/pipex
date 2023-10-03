@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handler.c                                    :+:      :+:    :+:   */
+/*   error_handler_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoudach <bmoudach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 03:29:40 by bmoudach          #+#    #+#             */
-/*   Updated: 2023/10/01 04:21:52 by bmoudach         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:45:49 by bmoudach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ int	error_handler(t_data *data)
 		infile_not_found(data);
 	if (data->args_error == 1)
 		cmd_not_found(data);
-	return (-1);
+	return (0);
 }
